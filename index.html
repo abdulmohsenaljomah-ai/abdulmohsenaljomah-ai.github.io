@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdulmohsen Aljomah | AI Engineer</title>
+<meta name="description" content="Abdulmohsen Aljomah — AI Engineer in Riyadh. LLMs, RAG and backend development.">
+<meta property="og:title" content="Abdulmohsen Aljomah | AI Engineer">
+<meta property="og:description" content="AI Engineer in Riyadh — LLMs, RAG and backend development.">
+<meta property="og:image" content="assets/photo.jpg">
+<link rel="icon" href="assets/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070d17; --bg2:#0b1424; --card:#0f1b2e; --card2:#13223a;
+  --line:rgba(148,197,255,.12); --line2:rgba(148,197,255,.22);
+  --text:#e7eef8; --muted:#93a4bd; --dim:#62748f;
+  --accent:#34d3b4; --accent2:#5aa9ff; --gold:#e9c46a;
+  --radius:18px;
+  --font:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html[lang=ar]{--font:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;
+  background:
+   radial-gradient(900px 500px at 85% -10%,rgba(90,169,255,.16),transparent 60%),
+   radial-gradient(700px 500px at -10% 30%,rgba(52,211,180,.10),transparent 60%),
+   var(--bg)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.35;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 75%)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:14px;z-index:20;margin:14px auto 0;max-width:1120px;padding:0 20px}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;
+  background:rgba(11,20,36,.72);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.06em;font-size:14px}
+.brand .mark{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:13px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04121a;font-weight:800}
+.links{display:flex;gap:4px}
+.links a{padding:7px 12px;border-radius:10px;color:var(--muted);font-size:14px;transition:.2s}
+.links a:hover{color:var(--text);background:var(--card2)}
+.lang{display:flex;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:3px}
+.lang button{border:0;background:none;color:var(--muted);font:600 12px var(--mono);padding:5px 10px;border-radius:7px;cursor:pointer}
+.lang button.on{background:var(--accent);color:#04121a}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:72px 0 40px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:500 12px var(--mono);letter-spacing:.04em;padding:6px 11px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);background:rgba(15,27,46,.6)}
+.chip.live{color:var(--accent);border-color:rgba(52,211,180,.35)}
+.chip.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-inline-end:7px;box-shadow:0 0 10px var(--accent)}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.05;font-weight:800;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+html[lang=ar] h1{letter-spacing:0;line-height:1.25}
+.role{font-size:20px;color:var(--text);margin:14px 0 10px;font-weight:600}
+.lead{color:var(--muted);max-width:540px;font-size:16px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;font-weight:600;font-size:14px;border:1px solid var(--line2);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#2bb39a);color:#04121a;border:0}
+.btn svg{width:16px;height:16px}
+.photo-card{position:relative;justify-self:center;width:min(340px,100%)}
+.photo{aspect-ratio:1;border-radius:28px;overflow:hidden;border:1px solid var(--line2);
+  box-shadow:0 30px 80px -30px rgba(52,211,180,.35),0 0 0 8px rgba(15,27,46,.6)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.float{position:absolute;padding:9px 13px;border-radius:12px;background:rgba(11,20,36,.9);border:1px solid var(--line2);font:500 12px var(--mono);color:var(--muted);backdrop-filter:blur(8px)}
+.float b{color:var(--accent);font-weight:600}
+.f1{top:18px;inset-inline-start:-38px}.f2{bottom:26px;inset-inline-end:-30px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px 0 30px}
+.stat{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.stat .n{font:600 30px var(--mono);color:var(--text)}
+.stat .n small{font-size:16px;color:var(--accent)}
+.stat .l{color:var(--muted);font-size:13px;margin-top:4px}
+
+/* sections */
+section{padding:70px 0 10px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.18em;color:var(--accent);text-transform:uppercase}
+html[lang=ar] .eyebrow{letter-spacing:.05em}
+h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;margin:6px 0 26px;letter-spacing:-.01em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:.25s}
+.card:hover{border-color:var(--line2)}
+.about p{color:var(--muted);margin-bottom:12px}
+.about p b{color:var(--text);font-weight:600}
+.facts{display:grid;gap:12px}
+.fact{display:flex;gap:14px;align-items:flex-start}
+.fact .ico{flex:0 0 38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--card2);color:var(--accent)}
+.fact .ico svg{width:18px;height:18px}
+.fact .t{font-weight:600;font-size:15px}.fact .s{color:var(--muted);font-size:13.5px}
+
+.xp{display:grid;grid-template-columns:200px 1fr;gap:24px}
+.xp .when{font:500 13px var(--mono);color:var(--accent)}
+.xp .where{color:var(--muted);font-size:14px;margin-top:4px}
+.xp h3{font-size:19px;margin-bottom:10px}
+ul.dots{list-style:none;display:grid;gap:8px}
+ul.dots li{position:relative;padding-inline-start:20px;color:var(--muted)}
+ul.dots li::before{content:"";position:absolute;inset-inline-start:2px;top:.7em;width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg)}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skills h4{font:500 12px var(--mono);letter-spacing:.12em;color:var(--dim);text-transform:uppercase;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:13px;padding:6px 11px;border-radius:9px;background:var(--card2);border:1px solid var(--line);color:var(--text)}
+
+.creds{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cred{display:flex;gap:14px;align-items:center}
+.cred .badge{flex:0 0 46px;height:46px;border-radius:12px;display:grid;place-items:center;font:600 11px var(--mono);color:#04121a}
+.cred .t{font-weight:600}.cred .s{color:var(--muted);font-size:13.5px}
+
+.projects{display:grid;gap:18px}
+.project{display:grid;grid-template-columns:1fr auto;gap:10px 24px;padding:26px}
+.project .top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.pill{font:500 11px var(--mono);letter-spacing:.06em;padding:4px 9px;border-radius:7px;text-transform:uppercase}
+.pill.grad{background:rgba(233,196,106,.14);color:var(--gold)}
+.pill.work{background:rgba(90,169,255,.14);color:var(--accent2)}
+.pill.personal{background:rgba(52,211,180,.14);color:var(--accent)}
+.pill.test{background:rgba(255,160,90,.14);color:#ffb27a}
+.pill.priv{background:rgba(148,164,189,.14);color:var(--muted)}
+.project h3{font-size:21px;line-height:1.3}
+.project p{color:var(--muted);margin-top:8px;max-width:760px}
+.metrics{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.metric{padding:9px 14px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}
+.metric b{display:block;font:600 18px var(--mono);color:var(--accent)}
+.metric span{font-size:12px;color:var(--muted)}
+.project .tags{margin-top:16px}
+.plinks{display:flex;flex-direction:column;gap:8px;align-self:start;min-width:150px}
+.plinks a{font-size:13.5px;font-weight:600;padding:9px 13px;border-radius:11px;border:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px;transition:.2s}
+.plinks a:hover{border-color:var(--accent);color:var(--accent)}
+.plinks .note{font-size:12.5px;color:var(--dim);padding:4px 2px}
+html[dir=rtl] .arrow{transform:scaleX(-1)}
+
+.contact{text-align:center;padding:46px 24px;background:radial-gradient(600px 220px at 50% 0%,rgba(52,211,180,.12),transparent),var(--card)}
+.contact p{color:var(--muted);max-width:560px;margin:0 auto 22px}
+.contact .btns{justify-content:center}
+footer{color:var(--dim);font-size:13px;text-align:center;padding:40px 0 50px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn:hover{transform:none}}
+
+/* numbers stay LTR inside RTL layout; mono font has no Arabic glyphs */
+.stat .n,.metric b{direction:ltr;unicode-bidi:isolate}
+html[dir=rtl] .stat .n,html[dir=rtl] .metric b{text-align:right}
+html[lang=ar] .chip,html[lang=ar] .float,html[lang=ar] .eyebrow,html[lang=ar] .pill,html[lang=ar] .skills h4,html[lang=ar] .xp .when{font-family:var(--font)}
+@media (max-width:900px){
+  .links{display:none}
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:48px}
+  .photo-card{width:min(260px,80%);order:-1}
+  .f1{inset-inline-start:-20px}.f2{inset-inline-end:-16px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid2,.skills,.creds{grid-template-columns:1fr}
+  .xp{grid-template-columns:1fr;gap:8px}
+  .project{grid-template-columns:1fr}
+  .plinks{flex-direction:row;flex-wrap:wrap}
+}
+@media (max-width:420px){.stat .n{font-size:24px}.f1,.f2{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navbar">
+    <a class="brand" href="#top"><span class="mark">AA</span><span data-i18n="brand">ABDULMOHSEN</span></a>
+    <div class="links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#experience" data-i18n="nav_xp">Experience</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="ar">AR</button>
+      <button type="button" data-lang="en" class="on">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <div>
+      <div class="chips">
+        <span class="chip" data-i18n="chip_grad">CS GRADUATE · DATA SCIENCE TRACK</span>
+        <span class="chip live" data-i18n="chip_coop">AI Engineering Co-op · BSF AI Factory</span>
+      </div>
+      <h1><span data-i18n="first">Abdulmohsen</span><br><span data-i18n="last">Aljomah</span></h1>
+      <div class="role" data-i18n="role">AI Engineer — LLMs, RAG &amp; backend development</div>
+      <p class="lead" data-i18n="lead">I build AI features that sit inside real business workflows: reading documents, finding the right information, and helping people make decisions faster — with a human reviewing the result.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects" data-i18n="btn_projects">View projects</a>
+        <a class="btn" href="https://www.linkedin.com/in/abdulmohsen-aljomah-1398203a8" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2 0-2.3 1.57-2.3 3.2V21H9z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/abdulmohsenaljomah-ai" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.3-.52-1.47.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <div class="photo"><img src="assets/photo.jpg" alt="Abdulmohsen Aljomah" width="460" height="460"></div>
+      <div class="float f1">RAG · <b>LLMs</b></div>
+      <div class="float f2" data-i18n="float2">Riyadh, <b>KSA</b></div>
+    </div>
+  </header>
+
+  <div class="stats reveal">
+    <div class="stat"><div class="n">4.6<small>/5</small></div><div class="l" data-i18n="s1">GPA · Honors degree</div></div>
+    <div class="stat"><div class="n">~40<small>%</small></div><div class="l" data-i18n="s2">Shorter contract approval cycle (est.)</div></div>
+    <div class="stat"><div class="n">58.3<small>%</small></div><div class="l" data-i18n="s3">Hit rate · Al-Warraq recommender</div></div>
+    <div class="stat"><div class="n">6</div><div class="l" data-i18n="s4">Team members led · graduation project</div></div>
+  </div>
+
+  <section id="about" class="reveal">
+    <div class="eyebrow" data-i18n="about_eb">About</div>
+    <h2 data-i18n="about_h">About me</h2>
+    <div class="grid2">
+      <div class="card about">
+        <p data-i18n-html="about_p1">I graduated in <b>Computer Science (Data Science track)</b> from Majmaah University with a <b>4.6 / 5 GPA</b>.</p>
+        <p data-i18n-html="about_p2">Since August 2026 I've been an <b>AI Engineering co-op trainee at Banque Saudi Fransi's AI Factory</b>, working on backend APIs for a procurement platform and on LLM workflows that read documents and fill in contract templates.</p>
+        <p data-i18n-html="about_p3">I like work where AI saves people real time — and where the result is checked by a person before anything is final.</p>
+      </div>
+      <div class="card facts">
+        <div class="fact"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><div class="t" data-i18n="f1t">Riyadh, Saudi Arabia</div><div class="s" data-i18n="f1s">Open to on-site in Riyadh or remote in KSA</div></div></div>
+        <div class="fact"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+          <div><div class="t" data-i18n="f2t">B.Sc. Computer Science</div><div class="s" data-i18n="f2s">Data Science track · Majmaah University</div></div></div>
+        <div class="fact"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+          <div><div class="t" data-i18n="f3t">AI Engineering Co-op</div><div class="s" data-i18n="f3s">Banque Saudi Fransi – AI Factory</div></div></div>
+        <div class="fact"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h10M4 19h7"/></svg></div>
+          <div><div class="t" data-i18n="f4t">Arabic &amp; English</div><div class="s" data-i18n="f4s">Native Arabic · professional working English</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="eyebrow" data-i18n="xp_eb">Experience</div>
+    <h2 data-i18n="xp_h">Where I work</h2>
+    <div class="card xp">
+      <div><div class="when" data-i18n="xp_when">Aug 2026 — Present</div><div class="where" data-i18n="xp_where">Riyadh · On-site</div></div>
+      <div>
+        <h3 data-i18n="xp_title">AI Engineering Co-op Trainee · Banque Saudi Fransi – AI Factory</h3>
+        <ul class="dots">
+          <li data-i18n="xp1">Backend development and REST APIs for an enterprise procurement platform: contracts, amendments and multi-stakeholder approvals.</li>
+          <li data-i18n="xp2">Logic that works out which approvers a contract needs from its contract and assessment data.</li>
+          <li data-i18n="xp3">A beta LLM workflow that reads supporting attachments (document parsing, embeddings, semantic retrieval) and fills contract templates.</li>
+          <li data-i18n="xp4">Requirements meetings, functional testing and backend–frontend integration; part of the Phase 1 delivery to the procurement department.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="eyebrow" data-i18n="sk_eb">Skills</div>
+    <h2 data-i18n="sk_h">What I work with</h2>
+    <div class="skills">
+      <div class="card"><h4 data-i18n="sk1">AI &amp; LLMs</h4><div class="tags">
+        <span class="tag">RAG</span><span class="tag">LLM integration</span><span class="tag">Prompt engineering</span><span class="tag">Embeddings</span><span class="tag">Semantic search</span><span class="tag">Document processing</span><span class="tag">Recommendation systems</span></div></div>
+      <div class="card"><h4 data-i18n="sk2">Programming &amp; data</h4><div class="tags">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">C++</span><span class="tag">Data cleaning</span><span class="tag">Feature engineering</span><span class="tag">TF-IDF</span><span class="tag">Classification</span></div></div>
+      <div class="card"><h4 data-i18n="sk3">Backend &amp; tools</h4><div class="tags">
+        <span class="tag">REST APIs</span><span class="tag">Flask</span><span class="tag">Dataiku</span><span class="tag">Git</span><span class="tag">Ollama</span><span class="tag">Excel</span></div></div>
+    </div>
+  </section>
+
+  <section id="credentials" class="reveal">
+    <div class="eyebrow" data-i18n="cr_eb">Credentials</div>
+    <h2 data-i18n="cr_h">Education &amp; certificates</h2>
+    <div class="creds">
+      <div class="card cred"><div class="badge" style="background:var(--gold)">B.Sc</div>
+        <div><div class="t" data-i18n="c1t">B.Sc. Computer Science — Honors</div><div class="s" data-i18n="c1s">Data Science track · GPA 4.6 / 5 · Majmaah University · 2026</div></div></div>
+      <div class="card cred"><div class="badge" style="background:var(--accent)">PCEP</div>
+        <div><div class="t">PCEP – Certified Entry-Level Python Programmer</div><div class="s">Python Institute</div></div></div>
+      <div class="card cred"><div class="badge" style="background:var(--accent2)">SQL</div>
+        <div><div class="t">Introduction to SQL</div><div class="s">Coursera</div></div></div>
+      <div class="card cred"><div class="badge" style="background:var(--accent2)">STAT</div>
+        <div><div class="t">Basic Statistics</div><div class="s">Coursera</div></div></div>
+      <div class="card cred"><div class="badge" style="background:var(--accent2)">SWE</div>
+        <div><div class="t">Introduction to Software Engineering</div><div class="s">Coursera</div></div></div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="eyebrow" data-i18n="pr_eb">Projects</div>
+    <h2 data-i18n="pr_h">Selected projects</h2>
+    <div class="projects">
+
+      <article class="card project">
+        <div>
+          <div class="top"><span class="pill work" data-i18n="pill_work">Work · BSF</span></div>
+          <h3 data-i18n="p1t">Procurement Contract Management Platform</h3>
+          <p data-i18n="p1d">One place for creating contracts, amendments, assessments and multi-stage approvals, plus an LLM workflow that pulls details from attachments into contract templates.</p>
+          <div class="metrics"><div class="metric"><b>~40%</b><span data-i18n="p1m">shorter approval cycle (est., user feedback)</span></div><div class="metric"><b>Phase 1</b><span data-i18n="p1m2">delivered to procurement</span></div></div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">REST APIs</span><span class="tag">LLMs</span><span class="tag">Embeddings</span><span class="tag">RAG</span></div>
+        </div>
+        <div class="plinks"><a href="https://github.com/abdulmohsenaljomah-ai/procurement-contract-platform" target="_blank" rel="noopener"><span data-i18n="more">Project details</span><span class="arrow">→</span></a><span class="note" data-i18n="conf">Code is confidential</span></div>
+      </article>
+
+      <article class="card project">
+        <div>
+          <div class="top"><span class="pill work" data-i18n="pill_work">Work · BSF</span><span class="pill test" data-i18n="pill_prog">In progress</span></div>
+          <h3 data-i18n="p2t">AI-Powered Regulatory Impact Analysis</h3>
+          <p data-i18n="p2d">Finds which internal policies and sections a new SAMA regulatory decision affects, using a two-level knowledge base, Top-5 semantic retrieval and an LLM relevance check — with people reviewing every suggestion.</p>
+          <div class="metrics"><div class="metric"><b>~30%</b><span data-i18n="p2m">less assessment effort (target)</span></div></div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Semantic search</span><span class="tag">LLMs</span></div>
+        </div>
+        <div class="plinks"><a href="https://github.com/abdulmohsenaljomah-ai/regulatory-impact-analysis" target="_blank" rel="noopener"><span data-i18n="more">Project details</span><span class="arrow">→</span></a><span class="note" data-i18n="conf">Code is confidential</span></div>
+      </article>
+
+      <article class="card project">
+        <div>
+          <div class="top"><span class="pill grad" data-i18n="pill_grad">Graduation project · Team lead</span></div>
+          <h3 data-i18n="p3t">Al-Warraq — Academic Book Recommender</h3>
+          <p data-i18n="p3d">A book recommender for university students. I led a team of six across data preparation, recommendation logic and the app. Book data comes from the Google Books API; recommendations use TF-IDF and cosine similarity, with spelling correction and an AI chatbot librarian.</p>
+          <div class="metrics">
+            <div class="metric"><b>58.3%</b><span>Hit rate</span></div>
+            <div class="metric"><b>71.4%</b><span>Precision@1</span></div>
+            <div class="metric"><b>10K+</b><span data-i18n="books">books</span></div>
+            <div class="metric"><b>19 ms</b><span data-i18n="lat">avg. latency</span></div>
+          </div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">TF-IDF</span><span class="tag">Scikit-learn</span><span class="tag">SymSpell</span><span class="tag">LLM API</span></div>
+        </div>
+        <div class="plinks">
+          <a href="https://al-warraq.onrender.com/" target="_blank" rel="noopener"><span data-i18n="demo">Live demo</span><span class="arrow">→</span></a>
+          <a href="https://github.com/Ziyad-alabduljabbar/Al-warraq" target="_blank" rel="noopener"><span>GitHub</span><span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="card project">
+        <div>
+          <div class="top"><span class="pill personal" data-i18n="pill_personal">Personal project</span><span class="pill priv" data-i18n="pill_proto">Prototype v0.3</span></div>
+          <h3 data-i18n="p4t">AI Personal Secretary</h3>
+          <p data-i18n="p4d">A Telegram assistant that understands Saudi Arabic, MSA and English by text or voice. It connects to email, calendar and document services and asks for approval before doing anything outside the chat.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">LLM APIs</span><span class="tag">Telegram</span><span class="tag">Speech</span></div>
+        </div>
+        <div class="plinks"><span class="note" data-i18n="private">Private repo · demo on request</span></div>
+      </article>
+
+      <article class="card project">
+        <div>
+          <div class="top"><span class="pill personal" data-i18n="pill_personal">Personal project</span><span class="pill test" data-i18n="pill_test">In testing</span></div>
+          <h3 data-i18n="p5t">Marcos — Arabic Voice Assistant</h3>
+          <p data-i18n="p5d">A voice assistant that runs locally on Windows: you speak in Arabic, Whisper turns it into text, a local model replies, and it can open apps or search the web from a fixed list of safe actions.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">faster-whisper</span><span class="tag">Ollama</span><span class="tag">Text-to-speech</span></div>
+        </div>
+        <div class="plinks"><a href="https://github.com/abdulmohsenaljomah-ai/voice-assist" target="_blank" rel="noopener"><span>GitHub</span><span class="arrow">→</span></a></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="card contact">
+      <div class="eyebrow" data-i18n="ct_eb">Contact</div>
+      <h2 data-i18n="ct_h">Let's talk</h2>
+      <p data-i18n="ct_p">I'm looking for an AI Engineer role in Riyadh or remote in Saudi Arabia. The quickest way to reach me is LinkedIn.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://www.linkedin.com/in/abdulmohsen-aljomah-1398203a8" target="_blank" rel="noopener" data-i18n="ct_li">Message me on LinkedIn</a>
+        <a class="btn" href="https://github.com/abdulmohsenaljomah-ai" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-i18n="footer">© 2026 Abdulmohsen Aljomah</footer>
+
+<script>
+const AR = {
+  brand:"عبدالمحسن", nav_about:"نبذة", nav_xp:"الخبرة", nav_skills:"المهارات", nav_projects:"المشاريع", nav_contact:"تواصل",
+  chip_grad:"خريج علوم حاسب · مسار علم البيانات", chip_coop:"متدرب تعاوني · مصنع الذكاء الاصطناعي في البنك السعودي الفرنسي",
+  first:"عبدالمحسن", last:"الجمعه",
+  role:"مهندس ذكاء اصطناعي — نماذج لغوية، RAG وتطوير الأنظمة الخلفية",
+  lead:"أبني مزايا ذكاء اصطناعي داخل إجراءات العمل الفعلية: قراءة المستندات، والوصول للمعلومة الصحيحة، ومساعدة الناس يقررون أسرع — مع مراجعة بشرية للنتيجة.",
+  btn_projects:"شوف المشاريع", float2:"الرياض، <b>السعودية</b>",
+  s1:"المعدل · مرتبة الشرف", s2:"تقليل مدة اعتماد العقود (تقديري)", s3:"نسبة الإصابة · نظام الورّاق", s4:"أعضاء فريق قدتهم · مشروع التخرج",
+  about_eb:"نبذة", about_h:"عني",
+  about_p1:"تخرجت من <b>علوم الحاسب (مسار علم البيانات)</b> في جامعة المجمعة بمعدل <b>4.6 من 5</b>.",
+  about_p2:"من أغسطس 2026 وأنا <b>متدرب تعاوني في مصنع الذكاء الاصطناعي بالبنك السعودي الفرنسي</b>، أشتغل على واجهات برمجية لمنصة المشتريات وعلى إجراءات تعتمد على النماذج اللغوية تقرأ المستندات وتعبّي قوالب العقود.",
+  about_p3:"أحب الشغل اللي يوفّر فيه الذكاء الاصطناعي وقت حقيقي على الناس — وتكون النتيجة مراجَعة من شخص قبل ما تُعتمد.",
+  f1t:"الرياض، السعودية", f1s:"متاح للعمل حضورياً في الرياض أو عن بُعد داخل السعودية",
+  f2t:"بكالوريوس علوم الحاسب", f2s:"مسار علم البيانات · جامعة المجمعة",
+  f3t:"تدريب تعاوني في هندسة الذكاء الاصطناعي", f3s:"البنك السعودي الفرنسي – مصنع الذكاء الاصطناعي",
+  f4t:"العربية والإنجليزية", f4s:"العربية لغة أم · إنجليزي بمستوى مهني",
+  xp_eb:"الخبرة", xp_h:"وين أشتغل", xp_when:"أغسطس 2026 — الآن", xp_where:"الرياض · حضوري",
+  xp_title:"متدرب تعاوني في هندسة الذكاء الاصطناعي · البنك السعودي الفرنسي – مصنع الذكاء الاصطناعي",
+  xp1:"تطوير الأنظمة الخلفية وواجهات REST لمنصة مشتريات: العقود، والتعديلات، والاعتمادات متعددة الأطراف.",
+  xp2:"منطق يحدد المعتمدين المطلوبين لكل عقد بناءً على بيانات العقد والتقييم.",
+  xp3:"إجراء تجريبي يعتمد على النماذج اللغوية يقرأ المرفقات (تحليل المستندات، التضمينات، البحث الدلالي) ويعبّي قوالب العقود.",
+  xp4:"اجتماعات المتطلبات، والاختبار الوظيفي، وربط الواجهة بالنظام الخلفي؛ ضمن تسليم المرحلة الأولى لإدارة المشتريات.",
+  sk_eb:"المهارات", sk_h:"الأدوات اللي أشتغل فيها", sk1:"الذكاء الاصطناعي والنماذج اللغوية", sk2:"البرمجة والبيانات", sk3:"الأنظمة الخلفية والأدوات",
+  cr_eb:"المؤهلات", cr_h:"التعليم والشهادات",
+  c1t:"بكالوريوس علوم الحاسب — مرتبة الشرف", c1s:"مسار علم البيانات · المعدل 4.6 من 5 · جامعة المجمعة · 2026",
+  pr_eb:"المشاريع", pr_h:"مشاريع مختارة",
+  pill_work:"عمل · البنك السعودي الفرنسي", pill_prog:"قيد التنفيذ", pill_grad:"مشروع التخرج · قائد الفريق",
+  pill_personal:"مشروع شخصي", pill_proto:"نموذج أولي v0.3", pill_test:"قيد التجربة",
+  p1t:"منصة إدارة عقود المشتريات",
+  p1d:"مكان واحد لإنشاء العقود والتعديلات والتقييمات والاعتمادات متعددة المراحل، مع إجراء يعتمد على نموذج لغوي يسحب التفاصيل من المرفقات إلى قوالب العقود.",
+  p1m:"تقليل مدة الاعتماد (تقديري، حسب المستفيدين)", p1m2:"تم تسليمها لإدارة المشتريات",
+  more:"تفاصيل المشروع", conf:"الكود سري",
+  p2t:"تحليل أثر القرارات التنظيمية بالذكاء الاصطناعي",
+  p2d:"يحدد السياسات والأقسام الداخلية المتأثرة بقرار جديد من ساما، باستخدام قاعدة معرفة بمستويين، وبحث دلالي لأفضل 5 نتائج، وتقييم ملاءمة بنموذج لغوي — وكل اقتراح يراجعه شخص.",
+  p2m:"تقليل جهد التقييم (مستهدف)",
+  p3t:"الورّاق — نظام توصية الكتب الأكاديمية",
+  p3d:"نظام يقترح كتب لطلاب الجامعة. قدت فريق من ستة أشخاص في تجهيز البيانات ومنطق التوصية والتطبيق. بيانات الكتب من Google Books API، والتوصيات تعتمد على TF-IDF وتشابه جيب التمام، مع تصحيح إملائي ومساعد محادثة يعمل كأمين مكتبة.",
+  books:"كتاب", lat:"متوسط زمن الاستجابة", demo:"تجربة مباشرة",
+  p4t:"السكرتير الشخصي الذكي",
+  p4d:"مساعد على تيليجرام يفهم اللهجة السعودية والفصحى والإنجليزية بالكتابة أو الصوت. مرتبط بالبريد والتقويم وخدمات المستندات، ويطلب موافقتك قبل ما ينفذ أي شيء خارج المحادثة.",
+  private:"مستودع خاص · العرض عند الطلب",
+  p5t:"ماركوس — مساعد صوتي عربي",
+  p5d:"مساعد صوتي يشتغل محلياً على ويندوز: تتكلم بالعربي، Whisper يحوّل كلامك لنص، ونموذج محلي يرد، ويقدر يفتح برامج أو يبحث في الإنترنت من قائمة إجراءات آمنة محددة.",
+  ct_eb:"تواصل", ct_h:"خلنا نتكلم",
+  ct_p:"أبحث عن وظيفة مهندس ذكاء اصطناعي في الرياض أو عن بُعد داخل السعودية. أسرع طريقة للتواصل معي عبر لينكدإن.",
+  ct_li:"راسلني على لينكدإن", footer:"© 2026 عبدالمحسن الجمعه"
+};
+const EN = {};
+document.querySelectorAll('[data-i18n]').forEach(el => EN[el.dataset.i18n] = el.textContent);
+document.querySelectorAll('[data-i18n-html]').forEach(el => EN[el.dataset.i18nHtml] = el.innerHTML);
+EN.float2 = document.querySelector('[data-i18n=float2]').innerHTML;
+
+function setLang(lang){
+  const dict = lang === 'ar' ? AR : EN;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.dataset.i18n]; if (v === undefined) return;
+    if (el.dataset.i18n === 'float2') el.innerHTML = v; else el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = dict[el.dataset.i18nHtml]; if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+let saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+if (saved === 'ar') setLang('ar');
+
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold: .12}) : null;
+document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+</script>
+</body>
+</html>
