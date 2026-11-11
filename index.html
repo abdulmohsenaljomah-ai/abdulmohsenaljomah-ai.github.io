@@ -7,8 +7,7 @@
 <meta name="description" content="Abdulmohsen Aljomah — AI Engineer in Riyadh. LLMs, RAG and backend development.">
 <meta property="og:title" content="Abdulmohsen Aljomah | AI Engineer">
 <meta property="og:description" content="AI Engineer in Riyadh — LLMs, RAG and backend development.">
-<meta property="og:image" content="assets/photo.jpg">
-<link rel="icon" href="assets/photo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%2334d3b4%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2226%22 text-anchor=%22middle%22 fill=%22%2304121a%22%3EAA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -70,6 +69,8 @@ html[lang=ar] h1{letter-spacing:0;line-height:1.25}
 .photo{aspect-ratio:1;border-radius:28px;overflow:hidden;border:1px solid var(--line2);
   box-shadow:0 30px 80px -30px rgba(52,211,180,.35),0 0 0 8px rgba(15,27,46,.6)}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.monogram{display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,rgba(90,169,255,.28),transparent 55%),radial-gradient(circle at 75% 80%,rgba(52,211,180,.22),transparent 55%),var(--card)}
+.monogram span{font:800 clamp(80px,12vw,128px)/1 var(--mono);letter-spacing:-.04em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .float{position:absolute;padding:9px 13px;border-radius:12px;background:rgba(11,20,36,.9);border:1px solid var(--line2);font:500 12px var(--mono);color:var(--muted);backdrop-filter:blur(8px)}
 .float b{color:var(--accent);font-weight:600}
 .f1{top:18px;inset-inline-start:-38px}.f2{bottom:26px;inset-inline-end:-30px}
@@ -201,7 +202,7 @@ html[lang=ar] .chip,html[lang=ar] .float,html[lang=ar] .eyebrow,html[lang=ar] .p
       </div>
     </div>
     <div class="photo-card">
-      <div class="photo"><img src="assets/photo.jpg" alt="Abdulmohsen Aljomah" width="460" height="460"></div>
+      <div class="photo monogram" aria-hidden="true"><span>AA</span></div>
       <div class="float f1">RAG · <b>LLMs</b></div>
       <div class="float f2" data-i18n="float2">Riyadh, <b>KSA</b></div>
     </div>
